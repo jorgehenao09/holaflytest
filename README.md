@@ -3,7 +3,7 @@ Holafly Test is a basic Android app where is showed details regarding superheroe
 
 ## API Key
 
-The project need marvel_public_api_key and marvel_private_api_key to build. You can add them to your home level common.properties file (located in ~/properties root ):
+The project need MARVEL_PUBLIC_API_KEY and MARVEL_PRIVATE_API_KEY to build. You must add them to your home level gradle.properties file (located in ~/properties root ):
 
 ```
 MARVEL_PUBLIC_API_KEY=<PUBLIC API KEY HERE>
