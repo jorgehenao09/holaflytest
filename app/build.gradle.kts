@@ -17,6 +17,18 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        if (project.hasProperty("MARVEL_PUBLIC_API_KEY")) {
+            val marvelPublicKey = '"' + project.property("MARVEL_PUBLIC_API_KEY") as String + '"'
+            val marvelPrivateKey = '"' + project.property("MARVEL_PRIVATE_API_KEY") as String + '"'
+            val marvelBaseUrl = '"' + project.property("MARVEL_BASE_URL") as String + '"'
+            buildConfigField("String", "MARVEL_PUBLIC_API_KEY", marvelPublicKey)
+            buildConfigField("String", "MARVEL_PRIVATE_API_KEY", marvelPrivateKey)
+            buildConfigField("String", "MARVEL_BASE_URL", marvelBaseUrl)
+        } else {
+            throw GradleException("Please provide the Marvel API keys as gradle properties")
+        }
+
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -40,6 +52,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.0"
@@ -65,6 +78,10 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     implementation(libs.androidx.compose.material3)
+
+    implementation(libs.retrofit2.retrofit)
+    implementation(libs.logging.interceptor)
+    implementation(libs.retrofit2.converter.gson)
 
     implementation(libs.com.google.dagger)
     implementation(libs.androidx.hilt)
