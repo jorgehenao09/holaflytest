@@ -2,15 +2,18 @@
 core-ktx = "1.12.0"
 lifecycle-runtime-ktx = "2.6.2"
 activity-compose = "1.8.0"
-fragment-ktx = "1.6.1"
+fragment-ktx = "1.6.2"
 compose-material3 = "1.1.2"
-navigation-compose = "2.7.4"
+navigation-compose = "2.7.5"
 constraintlayout-compose = "1.0.1"
 hilt-android = "2.48.1"
-hilt-navigation-compose = "1.0.0"
+hilt-navigation-compose = "1.1.0"
 junit = "4.13.2"
 androidx-junit = "1.1.5"
 espresso-core = "3.5.1"
+retrofit = "2.9.0"
+logging-interceptor = "4.12.0"
+retrofit-converter-gson = "2.9.0"
 
 # Plugin versions
 androidGradlePlugin = "8.0.2"
@@ -35,6 +38,10 @@ com-google-dagger = { group = "com.google.dagger", name = "hilt-android", versio
 androidx-hilt = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
 com-google-dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt-android" }
 
+retrofit2-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit"}
+logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "logging-interceptor"}
+retrofit2-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit-converter-gson"}
+
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-junit" }
 androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
@@ -48,4 +55,3 @@ android-library = { id = "com.android.library", version.ref = "androidGradlePlug
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt-android" }
 org-jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
-
