@@ -5,5 +5,7 @@ package com.jh.holaflytest.ui.navigation
  */
 enum class Screens {
     SplashScreen,
-    HomeScreen
+    HomeScreen,
+    SuperHeroComics,
+    ComicDetails
 }

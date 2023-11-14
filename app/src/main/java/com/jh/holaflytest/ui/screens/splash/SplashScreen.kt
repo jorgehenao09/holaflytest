@@ -1,6 +1,5 @@
 package com.jh.holaflytest.ui.screens.splash
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
