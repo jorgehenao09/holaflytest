@@ -5,6 +5,7 @@ import com.jh.holaflytest.data.repository.MenuOptionsRepositoryImpl
 import com.jh.holaflytest.data.repository.exception.ExceptionHomeRepository
 import com.jh.holaflytest.domain.repository.DomainExceptionRepository
 import com.jh.holaflytest.domain.repository.MenuOptionsRepository
+import com.jh.holaflytest.domain.useCase.GetMenuOptionsUC
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,6 +35,12 @@ object HomeModule {
         menuFileManager: MenuFileManager,
         @Named(EXCEPTION_HOME_REPOSITORY) exceptionHome: DomainExceptionRepository
     ): MenuOptionsRepository = MenuOptionsRepositoryImpl(menuFileManager, exceptionHome)
+
+    @Provides
+    @ViewModelScoped
+    fun provideGetMenuOptionsUseCase(
+        menuOptionsRepository: MenuOptionsRepository
+    ) = GetMenuOptionsUC(menuOptionsRepository)
 }
 
 private const val EXCEPTION_HOME_REPOSITORY = "exceptionHomeRepository"
