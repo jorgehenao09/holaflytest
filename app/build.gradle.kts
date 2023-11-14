@@ -91,8 +91,10 @@ dependencies {
     testImplementation(libs.io.mockk)
     testImplementation(libs.org.jetbrains.kotlinx)
     testImplementation(libs.org.jetbrains.kotlinx.test)
+    testImplementation(libs.app.cash.turbine.test)
     androidTestImplementation(libs.androidx.test.ext)
     androidTestImplementation(libs.androidx.test.espresso)
+    androidTestImplementation(libs.androidx.arch.core.test)
     debugImplementation(libs.androidx.compose.ui.test.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 }
