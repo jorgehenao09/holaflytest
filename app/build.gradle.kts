@@ -76,6 +76,7 @@ dependencies {
     implementation(libs.androidx.compose.ui.material3)
     implementation(libs.androidx.navigation)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.lifecycle.compose)
 
     implementation(libs.androidx.compose.material3)
 
