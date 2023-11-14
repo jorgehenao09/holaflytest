@@ -33,7 +33,7 @@ object HomeModule {
     fun provideMenuOptionsRepository(
         menuFileManager: MenuFileManager,
         @Named(EXCEPTION_HOME_REPOSITORY) exceptionHome: DomainExceptionRepository
-    ): MenuOptionsRepository = MenuOptionsRepositoryImpl(menuFileManager)
+    ): MenuOptionsRepository = MenuOptionsRepositoryImpl(menuFileManager, exceptionHome)
 }
 
 private const val EXCEPTION_HOME_REPOSITORY = "exceptionHomeRepository"

@@ -18,8 +18,8 @@ class MenuOptionsRepositoryImpl(
 
     override fun getMenuOptions(): Flow<Result<MenuOptions>> =
         flow {
-            val localSongs = menuFileManager.getMenuOptions()
-            emit(Result.success(localSongs.toDomainMenuOptions()))
+            val menuOptions = menuFileManager.getMenuOptions()
+            emit(Result.success(menuOptions.toDomainMenuOptions()))
         }.catch {
             emit(Result.failure(domainExceptionRepository.manageError(it)))
         }
