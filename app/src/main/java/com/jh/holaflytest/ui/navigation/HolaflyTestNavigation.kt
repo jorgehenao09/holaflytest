@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.jh.holaflytest.ui.screens.SplashScreen
 
 /**
  * Created by Jorge Henao on 13/11/23.
@@ -17,7 +18,9 @@ fun HolaflyTestNavigation() {
         startDestination = Screens.SplashScreen.name
     ) {
         composable(Screens.SplashScreen.name) {
-
+            SplashScreen { route ->
+                navController.navigate(route)
+            }
         }
         composable(Screens.HomeScreen.name) {
 
