@@ -14,7 +14,8 @@ espresso-core = "3.5.1"
 retrofit = "2.9.0"
 logging-interceptor = "4.12.0"
 retrofit-converter-gson = "2.9.0"
-mockkVersion =
+mockk-version = "1.13.8"
+coroutines-core = "1.8.0"
 
 # Plugin versions
 androidGradlePlugin = "8.0.2"
@@ -49,7 +50,8 @@ androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-co
 androidx-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-compose-ui-test-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-io-mockk = { group = "io.mockk", name = "mockk", version.ref = "espresso-core" }
+io-mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk-version" }
+org-jetbrains-kotlinx = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines-core" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -57,5 +59,3 @@ android-library = { id = "com.android.library", version.ref = "androidGradlePlug
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt-android" }
 org-jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
-
-testImplementation("io.mockk:mockk:${mockkVersion}")
