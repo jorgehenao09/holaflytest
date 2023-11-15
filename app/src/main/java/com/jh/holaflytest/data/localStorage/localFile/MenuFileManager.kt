@@ -16,18 +16,22 @@ class MenuFileManager {
             MenuOptionsDTO(
                 data = listOf(
                     MenuOptionDTO(
+                        id = 1009368,
                         image = R.drawable.ic_iron_man,
                         name = "Iron Man"
                     ),
                     MenuOptionDTO(
+                        id = 1009664,
                         image = R.drawable.ic_thor,
                         name = "Thor"
                     ),
                     MenuOptionDTO(
+                        id = 1009351,
                         image = R.drawable.ic_hulk,
                         name = "Hulk"
                     ),
                     MenuOptionDTO(
+                        id = 1009220,
                         image = R.drawable.ic_capitan_america,
                         name = "Capitán América"
                     )

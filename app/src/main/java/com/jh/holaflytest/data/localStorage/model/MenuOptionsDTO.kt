@@ -13,6 +13,7 @@ data class MenuOptionsDTO(
         return MenuOptions(
             options = data.map {
                 MenuOption(
+                    id = it.id,
                     image = it.image,
                     name = it.name
                 )
