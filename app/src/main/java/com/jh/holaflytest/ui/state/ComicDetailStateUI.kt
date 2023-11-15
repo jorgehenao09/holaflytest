@@ -7,6 +7,6 @@ import com.jh.holaflytest.domain.model.comicDetail.ComicDetail
  */
 data class ComicDetailStateUI(
     val isLoading: Boolean = false,
-    val isSuccess: ComicDetail? = null,
+    val isSuccess: List<ComicDetail>? = null,
     val isFailure: Boolean = false
 )
