@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.org.jetbrains.kotlin.kapt)
     id("com.google.dagger.hilt.android")
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -69,6 +70,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.fragment.ktx)
+    implementation(libs.kotlinx.serialization)
 
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
