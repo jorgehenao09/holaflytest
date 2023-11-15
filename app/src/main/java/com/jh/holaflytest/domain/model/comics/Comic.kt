@@ -7,7 +7,7 @@ import okhttp3.HttpUrl
  */
 
 data class Comic(
-    var id: String? = null,
+    var id: String? = "",
     var digitalId: String? = null,
     var title: String? = null,
     var issueNumber: String? = null,

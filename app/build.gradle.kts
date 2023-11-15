@@ -80,6 +80,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.lifecycle.compose)
 
+    implementation(libs.coil.compose)
+
     implementation(libs.androidx.compose.material3)
 
     implementation(libs.retrofit2.retrofit)
