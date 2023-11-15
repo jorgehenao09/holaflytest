@@ -36,14 +36,14 @@ object SuperHeroComicModule {
 
     @Provides
     @ViewModelScoped
-    fun provideAlbumRepository(
+    fun provideSuperHeroComicsRepository(
         marvelApi: MarvelApi,
         @Named(EXCEPTION_SUPER_HERO_COMIC_REPOSITORY) exceptionSuperHeroComic: DomainExceptionRepository
     ): SuperHeroComicsRepository = SuperHeroComicsRepositoryImpl(marvelApi, exceptionSuperHeroComic)
 
     @Provides
     @ViewModelScoped
-    fun provideAlbumUseCase(
+    fun provideSuperHeroComicsUseCase(
         superHeroComicsRepository: SuperHeroComicsRepository
     ) = GetSuperHeroComicsUC(superHeroComicsRepository)
 
