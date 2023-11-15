@@ -6,11 +6,15 @@ import com.jh.holaflytest.data.repository.exception.ExceptionSuperHeroComicsRepo
 import com.jh.holaflytest.domain.repository.DomainExceptionRepository
 import com.jh.holaflytest.domain.repository.SuperHeroComicsRepository
 import com.jh.holaflytest.domain.useCase.GetSuperHeroComicsUC
+import com.jh.holaflytest.ui.state.SuperHeroComicsStateUI
+import com.jh.holaflytest.ui.viewModel.SuperHeroComicsViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.flow.MutableStateFlow
 import retrofit2.Retrofit
 import javax.inject.Named
 
@@ -42,6 +46,16 @@ object SuperHeroComicModule {
     fun provideAlbumUseCase(
         superHeroComicsRepository: SuperHeroComicsRepository
     ) = GetSuperHeroComicsUC(superHeroComicsRepository)
+
+    @Provides
+    fun provideSuperHeroComicsViewModel(
+        getSuperHeroComicsUC: GetSuperHeroComicsUC,
+        coroutineDispatcher: CoroutineDispatcher
+    ) = SuperHeroComicsViewModel(
+        getSuperHeroComicsUC,
+        MutableStateFlow(SuperHeroComicsStateUI(isLoading = false)),
+        coroutineDispatcher
+    )
 }
 
 private const val EXCEPTION_SUPER_HERO_COMIC_REPOSITORY = "exceptionSuperHeroComicsRepository"
