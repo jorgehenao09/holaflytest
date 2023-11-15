@@ -42,8 +42,8 @@ fun HomeScreen(
             HomeHeader()
         }
         items(menuOptionsState.isSuccess?.options.orEmpty()) { option ->
-            SuperHeroOptionItem(option) {
-                onNavigateScreen.invoke(Screens.SuperHeroComics.name + "/$it")
+            SuperHeroOptionItem(option) { superHeroId: Long, superHeroName: String ->
+                onNavigateScreen.invoke(Screens.SuperHeroComics.name + "/$superHeroId" + "/$superHeroName")
             }
         }
     }

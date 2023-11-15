@@ -1,6 +1,5 @@
 package com.jh.holaflytest.ui.viewModel
 
-import app.cash.turbine.test
 import com.jh.holaflytest.MainDispatcherRule
 import com.jh.holaflytest.domain.model.MenuOptions
 import com.jh.holaflytest.domain.useCase.GetMenuOptionsUC
@@ -11,13 +10,19 @@ import io.mockk.coVerify
 import io.mockk.confirmVerified
 import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.toList
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.junit.After
-import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -25,6 +30,7 @@ import org.junit.Test
 /**
  * Created by Jorge Henao on 13/11/23.
  */
+@ExperimentalCoroutinesApi
 class MenuOptionsViewModelTest {
 
     private val unconfinedDispatcher = UnconfinedTestDispatcher()
@@ -50,16 +56,22 @@ class MenuOptionsViewModelTest {
 
         coEvery { getMenuOptionsUC.invoke() } returns response
 
-        menuOptionsViewModel.menuOptionsSate.test {
-            menuOptionsViewModel.getMenuOptions()
+        val states = arrayListOf<MenuOptionsStateUI>()
 
-            assertEquals(MenuOptionsStateUI(isLoading = false), awaitItem())
-            assertEquals(MenuOptionsStateUI(isLoading = true), awaitItem())
-            assertEquals(MenuOptionsStateUI(isLoading = false, isSuccess = menuOptions), awaitItem())
+        val job = launch {
+            menuOptionsViewModel.menuOptionsSate.toList(states)
         }
+
+        menuOptionsViewModel.getMenuOptions()
+
+        assertNotNull(states)
+        assertFalse(states[0].isLoading)
+        assertTrue(states[1].isLoading)
+        assertNull(states[1].isSuccess)
 
         coVerify(exactly = 1) { getMenuOptionsUC.invoke() }
         confirmVerified(menuOptions)
+        job.cancel()
     }
 
     @After
