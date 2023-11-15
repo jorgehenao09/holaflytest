@@ -11,18 +11,22 @@ fun getMenuOptionsResponse(): MenuOptionsDTO {
     return MenuOptionsDTO(
         data = listOf(
             MenuOptionDTO(
+                id = 123,
                 image = R.drawable.ic_iron_man,
                 name = "Iron Man"
             ),
             MenuOptionDTO(
+                id = 123,
                 image = R.drawable.ic_thor,
                 name = "Thor"
             ),
             MenuOptionDTO(
+                id = 123,
                 image = R.drawable.ic_hulk,
                 name = "Hulk"
             ),
             MenuOptionDTO(
+                id = 123,
                 image = R.drawable.ic_capitan_america,
                 name = "Capitán América"
             )
