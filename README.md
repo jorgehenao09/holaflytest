@@ -9,7 +9,3 @@ The project need MARVEL_PUBLIC_API_KEY and MARVEL_PRIVATE_API_KEY to build. You 
 MARVEL_PUBLIC_API_KEY=<PUBLIC API KEY HERE>
 MARVEL_PRIVATE_API_KEY=<PRIVATE API KEY HERE>
 ```
-
-## Architecture
-
-## Tools used
