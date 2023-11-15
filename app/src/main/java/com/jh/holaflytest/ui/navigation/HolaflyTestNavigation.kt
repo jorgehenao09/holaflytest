@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.jh.holaflytest.ui.screens.home.HomeScreen
 import com.jh.holaflytest.ui.screens.splash.SplashScreen
+import com.jh.holaflytest.ui.screens.superHeroComics.SuperHeroComicsScreen
 
 /**
  * Created by Jorge Henao on 13/11/23.
@@ -34,12 +35,19 @@ fun HolaflyTestNavigation() {
             }
         }
         composable(
-            route = Screens.SuperHeroComics.name + "/{superHeroId}",
+            route = Screens.SuperHeroComics.name + "/{superHeroId}/{superHeroName}",
             arguments = listOf(
-                navArgument(name = "superHeroId") { type = NavType.LongType }
+                navArgument(name = "superHeroId") { type = NavType.LongType },
+                navArgument(name = "superHeroName") { type = NavType.StringType }
             )
         ) {
-
+            SuperHeroComicsScreen(
+                superHeroComicsViewModel = hiltViewModel(),
+                superHeroId = it.arguments?.getLong("superHeroId") ?: 0,
+                superHeroName = it.arguments?.getString("superHeroName") ?: ""
+            ) { route ->
+                navController.navigate(route)
+            }
         }
     }
 }

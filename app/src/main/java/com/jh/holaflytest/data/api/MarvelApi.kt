@@ -14,4 +14,4 @@ interface MarvelApi {
     suspend fun getSuperHeroComics(@Path("characterId") characterId: Long): MarvelResponse<ComicDTO>
 }
 
-private const val COMICS_ENDPOINT = "characters/{characterId}/comics?limit=30"
+private const val COMICS_ENDPOINT = "characters/{characterId}/comics"

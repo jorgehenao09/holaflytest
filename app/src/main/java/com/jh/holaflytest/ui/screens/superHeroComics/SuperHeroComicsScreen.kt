@@ -1,8 +1,7 @@
-package com.jh.holaflytest.ui.screens.home
+package com.jh.holaflytest.ui.screens.superHeroComics
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -11,20 +10,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.jh.holaflytest.ui.navigation.Screens
-import com.jh.holaflytest.ui.viewModel.MenuOptionsViewModel
+import com.jh.holaflytest.ui.viewModel.SuperHeroComicsViewModel
 
 /**
- * Created by Jorge Henao on 14/11/23.
+ * Created by Jorge Henao on 15/11/23.
  */
 @Composable
-fun HomeScreen(
-    menuOptionsViewModel: MenuOptionsViewModel,
+fun SuperHeroComicsScreen(
+    superHeroComicsViewModel: SuperHeroComicsViewModel,
+    superHeroId: Long,
+    superHeroName: String,
     onNavigateScreen: (String) -> Unit
 ) {
-    val menuOptionsState by menuOptionsViewModel.menuOptionsSate.collectAsStateWithLifecycle()
+    val superHeroComicsState by superHeroComicsViewModel.superHeroComicsState.collectAsStateWithLifecycle()
 
     LaunchedEffect(key1 = Unit) {
-        menuOptionsViewModel.getMenuOptions()
+        superHeroComicsViewModel.getSuperHeroComics(superHeroId)
     }
 
     LazyColumn(
@@ -39,11 +40,11 @@ fun HomeScreen(
             )
     ) {
         item {
-            HomeHeader()
+            SuperHeroComicsHeader(superHeroName)
         }
-        items(menuOptionsState.isSuccess?.options.orEmpty()) { option ->
-            SuperHeroOptionItem(option) { superHeroId: Long, superHeroName: String ->
-                onNavigateScreen.invoke(Screens.SuperHeroComics.name + "/$superHeroId" + "/$superHeroName")
+        item {
+            SuperHeroComicsSection(superHeroComicsState) { comicId: String ->
+                onNavigateScreen.invoke(Screens.ComicDetails.name + "/$comicId")
             }
         }
     }

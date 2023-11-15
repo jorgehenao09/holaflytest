@@ -20,6 +20,7 @@ coroutines-core = "1.7.3"
 core-testing = "2.1.0"
 turbine-testing = "1.0.0"
 kotlin-serialization = "1.6.0"
+coil-compose = "2.2.2"
 
 # Plugin versions
 androidGradlePlugin = "8.0.2"
@@ -39,6 +40,7 @@ androidx-compose-ui-material3 = { group = "androidx.compose.material3", name = "
 androidx-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation-compose" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout-compose" }
 androidx-lifecycle-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle-runtime-compose" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil-compose" }
 
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 
