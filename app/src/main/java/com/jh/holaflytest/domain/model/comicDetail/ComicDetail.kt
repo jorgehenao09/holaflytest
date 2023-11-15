@@ -1,11 +1,11 @@
-package com.jh.holaflytest.domain.model.comics
+package com.jh.holaflytest.domain.model.comicDetail
 
-import okhttp3.HttpUrl
+import com.jh.holaflytest.domain.model.comics.Thumbnail
 
 /**
- * Created by Jorge Henao on 14/11/23.
+ * Created by Jorge Henao on 15/11/23.
  */
-data class Comic(
+data class ComicDetail(
     var id: String? = "",
     var digitalId: String? = null,
     var title: String? = null,
@@ -15,8 +15,4 @@ data class Comic(
     var modified: String? = null,
     var resourceURI: String? = null,
     var thumbnail: Thumbnail? = Thumbnail()
-)
-
-data class Thumbnail(
-    var url: HttpUrl? = null
 )
