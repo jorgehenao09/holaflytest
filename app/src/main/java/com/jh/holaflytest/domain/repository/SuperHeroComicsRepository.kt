@@ -8,5 +8,5 @@ import kotlinx.coroutines.flow.Flow
  */
 interface SuperHeroComicsRepository {
 
-    fun getSuperHeroComics(): Flow<Result<List<Comic>>>
+    fun getSuperHeroComics(characterId: Long): Flow<Result<List<Comic>>>
 }

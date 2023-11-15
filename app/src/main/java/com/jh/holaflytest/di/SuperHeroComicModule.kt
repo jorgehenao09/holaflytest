@@ -6,7 +6,10 @@ import com.jh.holaflytest.data.repository.exception.ExceptionSuperHeroComicsRepo
 import com.jh.holaflytest.domain.repository.DomainExceptionRepository
 import com.jh.holaflytest.domain.repository.SuperHeroComicsRepository
 import com.jh.holaflytest.domain.useCase.GetSuperHeroComicsUC
+import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
 import retrofit2.Retrofit
 import javax.inject.Named
@@ -14,6 +17,8 @@ import javax.inject.Named
 /**
  * Created by Jorge Henao on 14/11/23.
  */
+@Module
+@InstallIn(ViewModelComponent::class)
 object SuperHeroComicModule {
 
     @Provides

@@ -16,9 +16,9 @@ class SuperHeroComicsRepositoryImpl(
     private val domainExceptionRepository: DomainExceptionRepository
 ) : SuperHeroComicsRepository {
 
-    override fun getSuperHeroComics(): Flow<Result<List<Comic>>> =
+    override fun getSuperHeroComics(characterId: Long): Flow<Result<List<Comic>>> =
         flow {
-            val comicResponse = marvelApi.getSuperHeroComics()
+            val comicResponse = marvelApi.getSuperHeroComics(characterId)
             val comics = comicResponse.data.results.map { it.toDomainComic() }
             emit(Result.success(comics))
         }.catch {
