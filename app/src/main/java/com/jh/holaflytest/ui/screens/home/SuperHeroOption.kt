@@ -34,7 +34,7 @@ import com.jh.holaflytest.domain.model.MenuOption
 @Composable
 fun SuperHeroOptionItem(
     option: MenuOption,
-    superHeroSelected: (superHeroName: String) -> Unit
+    superHeroSelected: (superHeroName: Long) -> Unit
 ) {
     ElevatedCard(
         elevation = CardDefaults.cardElevation(
@@ -49,7 +49,7 @@ fun SuperHeroOptionItem(
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable {
-                    superHeroSelected(option.name)
+                    superHeroSelected(option.id)
                 }
         ) {
             val (infoOption, moreInfo) = createRefs()
