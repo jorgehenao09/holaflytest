@@ -69,7 +69,7 @@ class SuperHeroComicsRepositoryImplTest {
     }
 
     @Test
-    fun whenGetMenuOptionsIsCalledShouldReturnException() = runTest {
+    fun whenGetSuperHeroComicsIsCalledShouldReturnException() = runTest {
         val exception = ConnectException()
         coEvery { marvelApi.getSuperHeroComics(456) } throws exception
         every { domainExceptionRepository.manageError(exception) } returns InternalErrorException
