@@ -34,9 +34,9 @@ fun HolaflyTestNavigation() {
             }
         }
         composable(
-            route = Screens.SuperHeroComics.name + "/{superHeroName}",
+            route = Screens.SuperHeroComics.name + "/{superHeroId}",
             arguments = listOf(
-                navArgument(name = "superHeroName") { type = NavType.StringType }
+                navArgument(name = "superHeroId") { type = NavType.LongType }
             )
         ) {
 
