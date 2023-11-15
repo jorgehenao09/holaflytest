@@ -22,3 +22,17 @@ fun TitleText(
         color = MaterialTheme.colorScheme.primaryContainer
     )
 }
+
+@Composable
+fun DescriptionText(
+    modifier: Modifier,
+    descriptionValue: String
+) {
+    Text(
+        text = descriptionValue,
+        style = MaterialTheme.typography.bodySmall,
+        fontWeight = FontWeight.Bold,
+        modifier = modifier,
+        color = MaterialTheme.colorScheme.tertiary
+    )
+}
