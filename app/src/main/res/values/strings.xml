@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Holafly Test</string>
+
+    <!--    Splash screen-->
+    <string name="splash_start">Iniciar</string>
+
+    <!--    Home screen-->
+    <string name="home_superheroes">Superheroes</string>
+    <string name="home_more_information">Más información</string>
 </resources>
