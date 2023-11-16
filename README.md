@@ -9,6 +9,10 @@ The project need MARVEL_PUBLIC_API_KEY and MARVEL_PRIVATE_API_KEY to build. You 
 MARVEL_PUBLIC_API_KEY=<PUBLIC API KEY HERE>
 MARVEL_PRIVATE_API_KEY=<PRIVATE API KEY HERE>
 ```
+## Architecture
+
+![image](https://github.com/jorgehenao09/holaflytest/assets/21991701/14019d65-40e2-41e1-8860-a438397af9ad)
+
 ## Screenshots
 
 ### Start Screen
